@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <input type="number" onChange={(e) => setCount(e.target.value)} />
+      <input type="number" placeholder='0' onChange={(e) => setCount(e.target.value)} />
       <ComponentA count={count} />
       <ShowDataInTable />
     </div>

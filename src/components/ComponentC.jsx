@@ -5,7 +5,13 @@ const ComponentC = (props) => {
        const ValueofComponentC = Number(ValueofComponentB) + Number(1);
     //    console.log(ValueofComponentC);
   return (
-    <div style={{ display: "flex", textAlign: "center" }}>
+    <div
+      style={{
+        display: "flex",
+        textAlign: "center",
+        border: "3px solid whitesmoke",
+      }}
+    >
       <h1>{ValueofComponentC}</h1>
       <h2>ComponentC</h2>
     </div>

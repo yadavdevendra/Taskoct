@@ -7,7 +7,13 @@ const ComponentA = (props) => {
     // console.log(ValueofComponentA);
   return (
     <>
-      <div style={{ display: "flex", textAlign: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          textAlign: "center",
+          border: "3px solid whitesmoke",
+        }}
+      >
         <h1>{ValueofComponentA}</h1>
         <h2>ComponentA</h2>
       </div>

@@ -8,7 +8,7 @@ const ComponentB = (props) => {
     
   return (
     <>
-      <div style={{ display: "flex", textAlign: "center" }}>
+      <div style={{ display: "flex", textAlign: "center",border:"3px solid whitesmoke" }}>
         <h1>{ValueofComponentB}</h1>
         <h2>ComponentB</h2>
       </div>

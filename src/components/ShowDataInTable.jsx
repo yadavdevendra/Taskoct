@@ -2,8 +2,10 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
-const ShowDataInTable = ({count}) => {
+const ShowDataInTable = () => {
   const [user, setUser] = useState([]);
+  const [data, setData] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
@@ -14,8 +16,10 @@ const ShowDataInTable = ({count}) => {
       console.log(("Api data", data));
     };
     fetchData();
+    console.log("table");
+    setData(true);
   }, []);
-  
+
   return (
     <div
       style={{
@@ -24,30 +28,32 @@ const ShowDataInTable = ({count}) => {
         border: "3px solid whitesmoke",
       }}
     >
-      <table cellPadding="0" cellSpacing="0">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>UserName</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Website</th>
-          </tr>
-        </thead>
-        <thead>
-          {user.map((users) => (
-            <tr key={users.id}>
-              <td>{users.id}</td>
-              <td>{users.name}</td>
-              <td>{users.username}</td>
-              <td>{users.email}</td>
-              <td>{users.phone}</td>
-              <td>{users.website}</td>
+      {data && (
+        <table cellPadding="0" cellSpacing="0">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>UserName</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Website</th>
             </tr>
-          ))}
-        </thead>
-      </table>
+          </thead>
+          <thead>
+            {user.map((users) => (
+              <tr key={users.id}>
+                <td>{users.id}</td>
+                <td>{users.name}</td>
+                <td>{users.username}</td>
+                <td>{users.email}</td>
+                <td>{users.phone}</td>
+                <td>{users.website}</td>
+              </tr>
+            ))}
+          </thead>
+        </table>
+      )}
     </div>
   );
 };

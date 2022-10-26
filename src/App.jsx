@@ -6,7 +6,7 @@ import ShowDataInTable from './components/ShowDataInTable'
 
 function App() {
   const [count, setCount] = useState(0)
-  console.log("count",count)
+  // console.log("count",count)
 
   return (
     <div className="App">

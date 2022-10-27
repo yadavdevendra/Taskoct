@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ComponentB from "./ComponentB";
 
 const ComponentA = () => {
-   const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
   return (
     <>

@@ -1,8 +1,7 @@
 import React from "react";
 import ComponentC from "./ComponentC";
 
-const ComponentB = (props) => {
-
+const ComponentB = ({count}) => {
   return (
     <>
       <div
@@ -12,11 +11,11 @@ const ComponentB = (props) => {
           border: "3px solid whitesmoke",
         }}
       >
-        <h1>{Number(props.count)+2}</h1>
+        <h1>{Number(count) + 2}</h1>
         <h2>ComponentB</h2>
       </div>
       <div>
-        <ComponentC count={props.count} />
+        <ComponentC count={count} />
       </div>
     </>
   );

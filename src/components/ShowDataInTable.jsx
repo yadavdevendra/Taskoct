@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 const ShowDataInTable = () => {
-    const [user, setUser] = useState([]);
-    useEffect(() => {
-       fetch("https://jsonplaceholder.typicode.com/users")
-        .then((response) => response.json())
-        .then((data) => setUser(data));
-
-    }, []);
+  const [user, setUser] = useState([]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => setUser(data));
+  }, []);
   console.log("table");
   return (
     <div
@@ -45,4 +44,4 @@ const ShowDataInTable = () => {
   );
 };
 
-export default(ShowDataInTable);
+export default ShowDataInTable;

@@ -1,25 +1,14 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ShowDataInTable = () => {
-  const [user, setUser] = useState([]);
-  const [data, setData] = useState(false);
+    const [user, setUser] = useState([]);
+    useEffect(() => {
+       fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((data) => setUser(data));
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      const data = await response.json();
-      setUser(data);
-      console.log(("Api data", data));
-    };
-    fetchData();
-    console.log("table");
-    setData(true);
-  }, []);
-
+    }, []);
+  console.log("table");
   return (
     <div
       style={{
@@ -28,34 +17,32 @@ const ShowDataInTable = () => {
         border: "3px solid whitesmoke",
       }}
     >
-      {data && (
-        <table cellPadding="0" cellSpacing="0">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>UserName</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Website</th>
+      <table cellPadding="0" cellSpacing="0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <thead>
+          {user.map((users) => (
+            <tr key={users.id}>
+              <td>{users.id}</td>
+              <td>{users.name}</td>
+              <td>{users.username}</td>
+              <td>{users.email}</td>
+              <td>{users.phone}</td>
+              <td>{users.website}</td>
             </tr>
-          </thead>
-          <thead>
-            {user.map((users) => (
-              <tr key={users.id}>
-                <td>{users.id}</td>
-                <td>{users.name}</td>
-                <td>{users.username}</td>
-                <td>{users.email}</td>
-                <td>{users.phone}</td>
-                <td>{users.website}</td>
-              </tr>
-            ))}
-          </thead>
-        </table>
-      )}
+          ))}
+        </thead>
+      </table>
     </div>
   );
 };
 
-export default ShowDataInTable;
+export default(ShowDataInTable);

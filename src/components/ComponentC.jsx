@@ -1,21 +1,20 @@
-import React from 'react'
+import React from "react";
+import ShowDataInTable from "./ShowDataInTable";
 
 const ComponentC = (props) => {
-       const ValueofComponentB = props.ValueofComponentB;
-       const ValueofComponentC = Number(ValueofComponentB) + Number(1);
-    //    console.log(ValueofComponentC);
   return (
-    <div
-      style={{
-        display: "flex",
-        textAlign: "center",
-        border: "3px solid whitesmoke",
-      }}
-    >
-      <h1>{ValueofComponentC}</h1>
-      <h2>ComponentC</h2>
-    </div>
+      <div
+        style={{
+          display: "flex",
+          textAlign: "center",
+          border: "3px solid whitesmoke",
+        }}
+      >
+        <h1>{Number(props.count)+3}</h1>
+        <h2>ComponentC</h2>
+      </div>
+     
   );
 };
 
-export default ComponentC
+export default ComponentC;

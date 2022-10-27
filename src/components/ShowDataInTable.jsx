@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 
 const ShowDataInTable = () => {
   const [user, setUser] = useState([]);
@@ -44,4 +44,4 @@ const ShowDataInTable = () => {
   );
 };
 
-export default ShowDataInTable;
+export default memo(ShowDataInTable);

@@ -1,7 +1,6 @@
 import React from "react";
-import ShowDataInTable from "./ShowDataInTable";
 
-const ComponentC = ({count}) => {
+const ComponentC = ({ count }) => {
   return (
     <div
       style={{

@@ -1,18 +1,8 @@
-import React, { useState } from "react";
-import ComponentB from "./ComponentB";
+import React from "react";
 
-const ComponentA = () => {
-  const [count, setCount] = useState(0);
-
+const ComponentA = ({ count }) => {
   return (
     <>
-      <div>
-        <input
-          type="number"
-          placeholder="0"
-          onChange={(e) => setCount(e.target.value)}
-        />
-      </div>
       <div
         style={{
           display: "flex",
@@ -22,9 +12,6 @@ const ComponentA = () => {
       >
         <h1>{Number(count) + 1}</h1>
         <h2>ComponentA</h2>
-      </div>
-      <div>
-        <ComponentB count={count} />
       </div>
     </>
   );
